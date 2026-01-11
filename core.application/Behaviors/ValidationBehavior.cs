@@ -16,13 +16,18 @@ namespace core.application.Behaviors
         {
             if (_validators.Any())
             {
-                var context = new FluentValidation.ValidationContext<TRequest>(request);
+                //crear el contexto de validación
+                var context = new ValidationContext<TRequest>(request);
+
+                //ejecutar las validaciones de manera asíncrona y paralela
                 var validationResults = await Task.WhenAll(_validators.Select(v => v.ValidateAsync(context, cancellationToken)));
+                
+                //recolectar los errores de validación
                 var failures = validationResults.SelectMany(r => r.Errors).Where(f => f != null).ToList();
 
-                if (failures.Any())
+                if (failures.Count != 0)
                 {
-                   throw new Exception.ValidationException(failures);
+                    throw new ValidationException(failures);
                 }
             }
             return await next();
