@@ -1,4 +1,7 @@
-﻿using core.application.Wrappers;
+﻿using AutoMapper;
+using core.application.Interfaces;
+using core.application.Wrappers;
+using core.domain.Entities;
 using MediatR;
 
 namespace core.application.Features.Clientes.Commands.CreateClienteCommand
@@ -19,9 +22,21 @@ namespace core.application.Features.Clientes.Commands.CreateClienteCommand
 
     public class CreateClienteCommandHandler : IRequestHandler<CreateClienteCommand, Response<int>>
     {
+        private readonly IRepositoryAsync<Cliente> _repositoryAsync;
+        private readonly IMapper _mapper;
+
+        public CreateClienteCommandHandler(IRepositoryAsync<Cliente> repositoryAsync, IMapper mapper)
+        {
+            _repositoryAsync = repositoryAsync;
+            _mapper = mapper;
+        }
+
         public async Task<Response<int>> Handle(CreateClienteCommand request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var newRecord = _mapper.Map<Cliente>(request);
+            var data = await _repositoryAsync.AddAsync(newRecord);
+            
+            return new Response<int>(data.Id);
         }
     }
 }

@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="Ardalis.Specification" Version="9.3.1" />
     <PackageReference Include="Ardalis.Specification.EntityFrameworkCore" Version="9.3.1" />
+    <PackageReference Include="AutoMapper" Version="16.0.0" />
     <PackageReference Include="FluentValidation" Version="12.1.1" />
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1" />
     <PackageReference Include="MediatR" Version="14.0.0" />
@@ -20,8 +21,11 @@
     <Folder Include="Features\Clientes\Commands\UpdateClienteCommand\" />
     <Folder Include="Features\Clientes\Queries\GetClienteById\" />
     <Folder Include="Features\Clientes\Queries\GetAllClientes\" />
-    <Folder Include="Mappings\" />
     <Folder Include="Filters\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\core.domain\core.domain.csproj" />
   </ItemGroup>
 
 </Project>
