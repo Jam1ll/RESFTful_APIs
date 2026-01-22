@@ -12,7 +12,7 @@ using infrastructure.persistence.Contexts;
 namespace infrastructure.persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260113222606_InitialMigration")]
+    [Migration("20260117050759_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -42,7 +42,6 @@ namespace infrastructure.persistence.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 

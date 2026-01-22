@@ -7,6 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Asp.Versioning.Http" Version="8.1.1" />
+    <PackageReference Include="Mapster" Version="7.4.0" />
+    <PackageReference Include="Mapster.DependencyInjection" Version="1.0.1" />
     <PackageReference Include="MediatR" Version="14.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.2">
       <PrivateAssets>all</PrivateAssets>
@@ -19,10 +22,6 @@
     <ProjectReference Include="..\core.application\core.application.csproj" />
     <ProjectReference Include="..\infrastructure.persistence\infrastructure.persistence.csproj" />
     <ProjectReference Include="..\infrastructure.shared\infrastructure.shared.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\v1\" />
   </ItemGroup>
 
 </Project>

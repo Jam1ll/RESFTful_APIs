@@ -1,14 +1,14 @@
 ﻿using FluentValidation;
 
-namespace core.application.Features.Clientes.Commands.CreateClienteCommand
+namespace core.application.Features.Clientes.Commands.UpdateClienteCommand
 {
-    public class CreateClienteCommandValidator : AbstractValidator<CreateClienteCommand>
+    public class UpdateClienteCommandValidator : AbstractValidator<UpdateClienteCommand>
     {
-        public CreateClienteCommandValidator()
+        public UpdateClienteCommandValidator()
         {
             RuleFor(c => c.Nombre)
-                .NotEmpty().WithMessage("{PropertyName} no puede ser vacío.")
-                .MaximumLength(100).WithMessage("{PropertyName} no puede exceder {MaxLength} caracteres.");
+               .NotEmpty().WithMessage("{PropertyName} no puede ser vacío.")
+               .MaximumLength(100).WithMessage("{PropertyName} no puede exceder {MaxLength} caracteres.");
 
             RuleFor(c => c.Apellido)
                 .NotEmpty().WithMessage("{PropertyName} no puede ser vacío.")

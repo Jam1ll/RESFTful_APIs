@@ -1,4 +1,4 @@
-﻿using WebAPI.Middlewares;
+﻿ using WebAPI.Middlewares;
 
 namespace WebAPI.Extensions
 {

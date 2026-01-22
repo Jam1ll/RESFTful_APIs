@@ -14,8 +14,8 @@ namespace infrastructure.persistence.Configuration
             builder.Property(c => c.Nombre).HasMaxLength(100).IsRequired();
             builder.Property(c => c.Apellido).HasMaxLength(100).IsRequired();
             builder.Property(c => c.FechaNacimiento).IsRequired();
-            builder.Property(c => c.Telefono).HasMaxLength(10).IsRequired();
-            builder.Property(c => c.Email).HasMaxLength(100);
+            builder.Property(c => c.Telefono).HasMaxLength(20).IsRequired();
+            builder.Property(c => c.Email).HasMaxLength(100).IsRequired();
             builder.Property(c => c.Direccion).HasMaxLength(200).IsRequired();
             builder.Property(c => c.Edad);
             builder.Property(c => c.CreatedBy).HasMaxLength(30);

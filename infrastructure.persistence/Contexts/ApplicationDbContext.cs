@@ -21,6 +21,7 @@ namespace infrastructure.persistence.Contexts
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new())
         {
+            // Automatically set Created and LastModified timestamps
             foreach (var entry in ChangeTracker.Entries<AuditableBaseEntity>())
             {
                 switch (entry.State)
@@ -38,6 +39,7 @@ namespace infrastructure.persistence.Contexts
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // Apply all configurations from the current assembly
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
     }
