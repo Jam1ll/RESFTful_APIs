@@ -20,6 +20,10 @@ namespace core.domain.Entities
                 }
                 return _edad;
             }
+            set
+            {
+                _edad = value;
+            }
         }
 
         private int _edad;
