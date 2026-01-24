@@ -17,7 +17,18 @@ namespace infrastructure.persistence
                 b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
 
             #region repositories
+
             services.AddTransient(typeof(IRepositoryAsync<>), typeof(RepositoryAsync<>));
+
+            #endregion
+
+            #region caching
+
+            services.AddStackExchangeRedisCache(options =>
+            {
+                options.Configuration = configuration.GetValue<string>("Caching:RedisConnection");
+            });
+
             #endregion
         }
     }

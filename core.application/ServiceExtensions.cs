@@ -45,15 +45,6 @@ namespace core.application
             });
 
             #endregion
-
-            #region caching
-
-            services.AddStackExchangeRedisCache(options =>
-            {
-                options.Configuration = "localhost:6379";
-            });
-
-            #endregion
         }
     }
 }
