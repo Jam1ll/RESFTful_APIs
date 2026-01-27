@@ -5,6 +5,7 @@
     <Project Path="core.domain/core.domain.csproj" />
   </Folder>
   <Folder Name="/src/infrastructure/">
+    <Project Path="infrastructure.identity/infrastructure.identity.csproj" Id="7bcc8406-babd-48be-b364-eb75fdd3fff1" />
     <Project Path="infrastructure.persistence/infrastructure.persistence.csproj" />
     <Project Path="infrastructure.shared/infrastructure.shared.csproj" />
   </Folder>

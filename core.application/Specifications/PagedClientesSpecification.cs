@@ -1,8 +1,5 @@
 ﻿using Ardalis.Specification;
 using core.domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace core.application.Specifications
 {
