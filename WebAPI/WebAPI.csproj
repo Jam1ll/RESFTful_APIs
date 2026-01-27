@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\core.application\core.application.csproj" />
+    <ProjectReference Include="..\infrastructure.identity\infrastructure.identity.csproj" />
     <ProjectReference Include="..\infrastructure.persistence\infrastructure.persistence.csproj" />
     <ProjectReference Include="..\infrastructure.shared\infrastructure.shared.csproj" />
   </ItemGroup>
